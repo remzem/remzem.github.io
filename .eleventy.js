@@ -1,7 +1,7 @@
 module.exports = function (eleventyConfig) {
   // Copy static assets straight through to the output folder
   eleventyConfig.addPassthroughCopy("css");
-
+  eleventyConfig.addPassthroughCopy("img");
   // Group all "character", "location", "faction" etc. pages into one
   // collection so we can build category listing pages automatically.
   eleventyConfig.addCollection("wikiPages", function (collectionApi) {
