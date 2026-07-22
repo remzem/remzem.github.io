@@ -2,12 +2,19 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  height: 100%;
   margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: "Space Grotesk", sans-serif;
-  font-weight: 300;
-  color: #111;
-  background: #fff;
+  font-weight: 400;
+  color: #1a1a1a;
+  background: #d8d3c4;
 }
 
 h1, h2, h3, h4,
@@ -15,12 +22,17 @@ h1, h2, h3, h4,
 .infobox-title,
 .sidebar-label {
   font-family: "Tomorrow", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 a {
-  color: #111;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
   text-decoration: underline;
 }
 
@@ -30,51 +42,59 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid #111;
+  padding: 1rem 2rem;
+  background: #2b2733;
+  color: #f4f1ea;
 }
 
 .wiki-logo {
-  font-size: 1.1rem;
-  text-decoration: none;
+  font-size: 1.3rem;
+  color: #f4f1ea;
 }
 
 .wiki-topnav a {
   margin-left: 1.5rem;
   font-size: 0.9rem;
+  color: #f4f1ea;
+  padding: 0.3rem 0.6rem;
+  background: #443d52;
 }
 
-/* ---- layout grid ---- */
+.wiki-topnav a:hover {
+  background: #58506a;
+  text-decoration: none;
+}
+
+/* ---- main layout: fills remaining height, footer pinned below ---- */
 
 .wiki-body {
+  flex: 1 0 auto;
   display: grid;
-  grid-template-columns: 180px 1fr 240px;
-  gap: 0;
-  max-width: 1000px;
+  grid-template-columns: 200px 1fr 260px;
+  gap: 1rem;
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
+  padding: 1rem;
 }
 
 .wiki-sidebar,
 .wiki-content,
 .infobox {
   padding: 1.25rem;
-  border-right: 1px solid #111;
 }
 
-.infobox {
-  border-right: none;
-}
+/* ---- sidebar block ---- */
 
 .wiki-sidebar {
-  border-top: 1px solid transparent;
+  background: #c9c2ac;
 }
-
-/* ---- sidebar ---- */
 
 .sidebar-label {
   font-size: 0.75rem;
   text-transform: uppercase;
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
+  color: #4a4438;
 }
 
 .wiki-sidebar ul {
@@ -84,41 +104,69 @@ a {
 }
 
 .wiki-sidebar li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.wiki-sidebar li a {
+  display: block;
+  padding: 0.4rem 0.6rem;
+  background: #f4f1ea;
   font-size: 0.9rem;
 }
 
-/* ---- content ---- */
+.wiki-sidebar li a:hover {
+  background: #ffffff;
+  text-decoration: none;
+}
+
+/* ---- content block ---- */
+
+.wiki-content {
+  background: #f4f1ea;
+}
 
 .wiki-content h1 {
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   margin-top: 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #111;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  background: #e4dcc8;
+  padding: 0.75rem 1rem;
+  margin: -1.25rem -1.25rem 1rem -1.25rem;
 }
 
 .wiki-content h2 {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  background: #e4dcc8;
+  padding: 0.4rem 0.75rem;
+  margin: 1.5rem -0.25rem 0.75rem;
 }
 
-.wiki-content p {
+.wiki-content p,
+.wiki-content li {
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
-/* ---- infobox ---- */
+/* ---- infobox block ---- */
+
+.infobox {
+  background: #dce3d6;
+  align-self: start;
+}
 
 .infobox img {
   width: 100%;
   display: block;
-  border: 1px solid #111;
   margin-bottom: 0.75rem;
 }
 
 .infobox-title {
   text-align: center;
-  font-size: 1rem;
-  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+  margin: -1.25rem -1.25rem 0.75rem;
+  padding: 0.6rem;
+  background: #b9c7ae;
 }
 
 .infobox table {
@@ -127,17 +175,20 @@ a {
   font-size: 0.85rem;
 }
 
+.infobox tr:nth-child(odd) {
+  background: #cbd6c3;
+}
+
 .infobox th,
 .infobox td {
-  border-top: 1px solid #111;
-  padding: 0.4rem 0.25rem;
+  padding: 0.45rem 0.5rem;
   text-align: left;
   vertical-align: top;
 }
 
 .infobox th {
   width: 40%;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* ---- listing pages ---- */
@@ -148,36 +199,35 @@ a {
 }
 
 .wiki-list li {
-  padding: 0.4rem 0;
-  border-bottom: 1px solid #111;
+  padding: 0.6rem 0.75rem;
   font-size: 0.95rem;
+}
+
+.wiki-list li:nth-child(odd) {
+  background: #e4dcc8;
 }
 
 .wiki-list .tag {
   font-size: 0.75rem;
   margin-left: 0.5rem;
-  border: 1px solid #111;
-  padding: 0.05rem 0.35rem;
+  padding: 0.1rem 0.5rem;
+  background: #2b2733;
+  color: #f4f1ea;
 }
 
-/* ---- footer ---- */
+/* ---- footer: always pinned to the bottom of the viewport ---- */
 
 .wiki-footer {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1rem 1.25rem;
-  border-top: 1px solid #111;
+  flex-shrink: 0;
+  background: #2b2733;
+  color: #f4f1ea;
+  text-align: center;
+  padding: 0.9rem;
   font-size: 0.8rem;
 }
 
 @media (max-width: 800px) {
   .wiki-body {
     grid-template-columns: 1fr;
-  }
-  .wiki-sidebar,
-  .wiki-content,
-  .infobox {
-    border-right: none;
-    border-bottom: 1px solid #111;
   }
 }

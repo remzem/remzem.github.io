@@ -13,6 +13,7 @@ _includes/
   layouts/base.njk       <- the page shell (topbar, sidebar, infobox slot)
   partials/infobox.njk   <- the infobox panel
 css/style.css   <- all styling
+.eleventyignore <- tells 11ty to skip README.md when building the site
 index.njk               <- homepage
 characters/index.njk     <- auto-generated list of all characters
 locations/index.njk      <- auto-generated list of all locations
