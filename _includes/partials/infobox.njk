@@ -2,7 +2,7 @@
   {% if infobox.image %}
     <img src="{{ infobox.image }}" alt="{{ title }}">
   {% endif %}
-  <h2>{{ title }}</h2>
+  <p class="infobox-title">{{ title }}</p>
   <table>
     {% for field in infobox.fields %}
       <tr>

@@ -1,30 +1,29 @@
 ---
 layout: layouts/base.njk
-title: Aeliana Voss
+title: Character Name
 category: character
 infobox:
   image: /img/placeholder.png
   fields:
-    - label: Role
-      value: Exiled queen
-    - label: Species
-      value: Human
-    - label: Homeland
-      value: Vessport
-    - label: Status
-      value: Alive
+    - label: Field label
+      value: Field value
+    - label: Field label
+      value: Field value
+    - label: Field label
+      value: Field value
+    - label: Field label
+      value: Field value
 ---
 
-Aeliana Voss is the deposed queen of Vessport, exiled after the coup of the
-Ashen Council. She now travels the border kingdoms gathering allies to
-reclaim her throne.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. This paragraph is
+placeholder text and should be replaced with a real description.
 
-## Background
+## Section heading
 
-Born into the ruling Voss line, Aeliana was groomed from childhood to lead.
-Her exile began when...
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Replace
+this section with real content.
 
-## Relationships
+## Another section
 
-- **Bren Calloway** — former royal guard, now her closest ally.
-- **The Ashen Council** — the group responsible for her exile.
+- List item placeholder
+- List item placeholder

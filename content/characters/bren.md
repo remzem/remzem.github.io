@@ -1,23 +1,19 @@
 ---
 layout: layouts/base.njk
-title: Bren Calloway
+title: Second Character Name
 category: character
 infobox:
   image: /img/placeholder.png
   fields:
-    - label: Role
-      value: Former royal guard
-    - label: Species
-      value: Human
-    - label: Homeland
-      value: Vessport
-    - label: Status
-      value: Alive
+    - label: Field label
+      value: Field value
+    - label: Field label
+      value: Field value
 ---
 
-Bren Calloway served in Vessport's royal guard for a decade before the coup.
-He fled with Aeliana Voss and has sworn to see her restored to the throne.
+Placeholder body text for the second example page. Replace with real
+content when ready.
 
-## Background
+## Section heading
 
-Bren grew up in the dockside district of Vessport...
+Placeholder paragraph text goes here.

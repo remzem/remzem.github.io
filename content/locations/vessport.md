@@ -1,22 +1,19 @@
 ---
 layout: layouts/base.njk
-title: Vessport
+title: Location Name
 category: location
 infobox:
   image: /img/placeholder.png
   fields:
-    - label: Type
-      value: City-state
-    - label: Ruler
-      value: The Ashen Council (current)
-    - label: Population
-      value: ~80,000
+    - label: Field label
+      value: Field value
+    - label: Field label
+      value: Field value
 ---
 
-Vessport is a coastal city-state and the former seat of the Voss royal line.
-Since the coup, it has been governed by the Ashen Council.
+Placeholder body text describing this location. Replace with real content.
 
-## Districts
+## Section heading
 
-- **The Dockside** — trade and shipping quarter.
-- **Highgate** — the old royal district, now the Council's seat of power.
+- Placeholder list item
+- Placeholder list item
