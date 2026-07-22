@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title }} · Worldwiki</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="wiki-shell">
+    <header class="wiki-topbar">
+      <a class="wiki-logo" href="/">Worldwiki</a>
+      <nav class="wiki-topnav">
+        <a href="/characters/">Characters</a>
+        <a href="/locations/">Locations</a>
+      </nav>
+    </header>
+
+    <div class="wiki-body">
+      <aside class="wiki-sidebar">
+        <h3>Navigate</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/characters/">All Characters</a></li>
+          <li><a href="/locations/">All Locations</a></li>
+        </ul>
+      </aside>
+
+      <main class="wiki-content">
+        <h1>{{ title }}</h1>
+        {{ content | safe }}
+      </main>
+
+      {% if infobox %}
+        {% include "partials/infobox.njk" %}
+      {% endif %}
+    </div>
+
+    <footer class="wiki-footer">
+      <p>A small worldbuilding wiki, built with Eleventy.</p>
+    </footer>
+  </div>
+</body>
+</html>

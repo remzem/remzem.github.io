@@ -1,0 +1,14 @@
+---
+layout: layouts/base.njk
+title: Welcome
+---
+<p>This is the home page of the worldbuilding wiki. Use the sidebar to browse
+Characters and Locations, or just start editing files in the <code>content/</code>
+folder to add more.</p>
+
+<h2>Recently added</h2>
+<ul class="wiki-list">
+{% for page in collections.wikiPages | reverse %}
+  <li><a href="{{ page.url }}">{{ page.data.title }}</a> <span class="tag">{{ page.data.category }}</span></li>
+{% endfor %}
+</ul>

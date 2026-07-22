@@ -1,0 +1,153 @@
+:root {
+  --bg: #f4f4f7;
+  --panel: #ffffff;
+  --accent: #3b5ba9;
+  --border: #d8d8e0;
+  --text: #202127;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.wiki-topbar {
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+}
+
+.wiki-logo {
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.wiki-topnav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.wiki-topnav a:hover { text-decoration: underline; }
+
+.wiki-body {
+  display: grid;
+  grid-template-columns: 200px 1fr 280px;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  align-items: start;
+}
+
+.wiki-sidebar {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.wiki-sidebar h3 {
+  margin-top: 0;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.wiki-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wiki-sidebar li { margin-bottom: 0.5rem; }
+.wiki-sidebar a { color: var(--accent); text-decoration: none; }
+
+.wiki-content {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem 2rem;
+}
+
+.wiki-content h1 {
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.5rem;
+}
+
+.infobox {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.infobox img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+
+.infobox h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.infobox table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.infobox th {
+  text-align: left;
+  color: #666;
+  font-weight: 600;
+  padding: 0.35rem 0;
+  width: 40%;
+  vertical-align: top;
+}
+
+.infobox td {
+  padding: 0.35rem 0;
+  vertical-align: top;
+}
+
+.wiki-list {
+  list-style: none;
+  padding: 0;
+}
+
+.wiki-list li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.wiki-list a { color: var(--accent); text-decoration: none; }
+.wiki-list .tag {
+  font-size: 0.75rem;
+  color: #888;
+  margin-left: 0.5rem;
+}
+
+.wiki-footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+  padding: 1rem;
+}
+
+@media (max-width: 800px) {
+  .wiki-body { grid-template-columns: 1fr; }
+}
