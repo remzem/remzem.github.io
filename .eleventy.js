@@ -1,5 +1,6 @@
 module.exports = function (eleventyConfig) {
   // Copy static assets straight through to the output folder
+  eleventyConfig.addFilter("head", (arr, n) => arr.slice(0, n));
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("img");
   // Group all "character", "location", "faction" etc. pages into one
