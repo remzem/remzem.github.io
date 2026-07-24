@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} - Wiki</title>
+  <title>Location Name - Wiki</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,38 +21,47 @@
     </nav>
   </header>
 
-  {% if hero %}
-    <section class="hero">
-      <div class="hero-wedge"></div>
-      <div class="hero-dots"></div>
-      <div class="hero-inner">
-        <h1 class="hero-title">{{ hero.title }}</h1>
-        <p class="eyebrow">{{ hero.subtitle }}</p>
-      </div>
-    </section>
-    <main class="page">
-      {{ content | safe }}
-    </main>
-  {% elif fullBleed %}
-    <main class="page-fullbleed">
-      {{ content | safe }}
-    </main>
-  {% else %}
-    <main class="page {% if wide %}page-wide{% endif %} {% if infobox %}page-with-infobox{% endif %}">
+  
+    <main class="page  page-with-infobox">
       <div class="page-main">
-        <h1 class="{% if plainTitle %}no-rule{% endif %}">{{ title }}</h1>
-        {{ content | safe }}
-      </div>
-      {% if infobox %}
-        {% include "partials/infobox.njk" %}
-      {% endif %}
-    </main>
-  {% endif %}
+        <h1 class="">Location Name</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+<h2>Section heading</h2>
+<ul>
+<li>Placeholder list item</li>
+<li>Placeholder list item</li>
+</ul>
 
-  {% if not fullBleed %}
+      </div>
+      
+        <aside class="infobox">
+  
+    <img src="/img/placeholder.png" alt="Location Name">
+  
+  <p class="infobox-title">Location Name</p>
+  <table>
+    
+      <tr>
+        <th>Field label</th>
+        <td>Field value</td>
+      </tr>
+    
+      <tr>
+        <th>Field label</th>
+        <td>Field value</td>
+      </tr>
+    
+  </table>
+</aside>
+
+      
+    </main>
+  
+
+  
     <footer class="wiki-footer">
       <p>Placeholder footer text.</p>
     </footer>
-  {% endif %}
+  
 </body>
 </html>

@@ -1,13 +1,22 @@
 ---
 layout: layouts/base.njk
 title: Main Page
+hero:
+  title: WIKI TITLE
+  subtitle: A placeholder tagline for a worldbuilding project.
 ---
 <p>Placeholder introduction text for the wiki. Replace this with a real
 description of the project.</p>
 
 <h2>Recently added</h2>
-<ul class="wiki-list">
-{% for page in collections.wikiPages | reverse %}
-  <li><a href="{{ page.url }}">{{ page.data.title }}</a> <span class="tag">{{ page.data.category }}</span></li>
+<ul class="card-list">
+{% for page in collections.wikiPages | head(5) %}
+  <li class="card-row">
+    <img class="card-thumb" src="{{ page.data.infobox.image }}" alt="{{ page.data.title }}">
+    <div>
+      <h3 class="card-title"><a href="{{ page.url }}">{{ page.data.title }}</a></h3>
+      <p class="card-desc">{{ page.data.summary }}</p>
+    </div>
+  </li>
 {% endfor %}
 </ul>

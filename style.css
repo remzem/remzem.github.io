@@ -286,140 +286,79 @@ a:hover {
   font-weight: 600;
 }
 
-/* ---- fullBleed pages: fill the viewport below the header exactly,
-   no scroll, no footer (see base.njk) ---- */
+/* ---- character select: large presentational grid + preview ---- */
 
-.page-fullbleed {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+.char-select-eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--dim);
+  margin: 0 0 2rem;
 }
 
-/* ---- character select: two-pane split (menu left, display right),
-   modeled directly on the old site's working layout ---- */
-
-.char-page {
-  position: relative;
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  overflow: hidden;
-  background-image: linear-gradient(var(--line) 1px, transparent 1px),
-                     linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 36px 36px;
+.char-select {
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 3.5rem;
+  align-items: start;
 }
 
-/* Left pane: title + horizontally-wrapping thumbnail row. Fills
-   left-to-right, wraps to a new row below, scrolls internally if it
-   runs out of vertical space - the row never forces the page to scroll. */
-.char-menu {
-  width: 50%;
-  height: 100%;
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
+/* Auto-fills more columns as more characters are added - no CSS changes
+   needed to add a 6th, 10th, etc. character. */
+.char-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 140px);
+  gap: 2rem;
+  align-items: end;
+  padding-bottom: 1rem;
 }
 
-.char-menu-title {
-  flex: 0 0 auto;
-  font-size: 2.2rem;
-  margin: 0 0 1.5rem;
-}
-
-.char-row {
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  gap: 1rem;
-  overflow-y: auto;
-}
-
-.char-thumb {
-  display: block;
-  height: 80px;
+.char-thumb-btn {
+  display: inline-block;
+  max-width: 140px;
+  max-height: 220px;
   width: auto;
-  max-width: 120px;
+  height: auto;
+  border: none;
+  overflow: visible;
   transition: transform 0.18s ease;
+  position: relative;
 }
 
-.char-thumb img {
+.char-thumb-btn img {
   display: block;
-  height: 100%;
+  max-width: 100%;
+  max-height: 220px;
   width: auto;
-  max-width: 120px;
+  height: auto;
   object-fit: contain;
 }
 
-.char-thumb:hover,
-.char-thumb.active {
+.char-thumb-btn:hover,
+.char-thumb-btn.active {
   transform: scale(1.15);
   z-index: 1;
 }
 
-/* Right pane: every character's image is stacked in the exact same
-   spot (position: absolute), all preloaded, only the active one faded
-   to opacity 1. Nothing ever resizes or repositions on hover - that's
-   what stops the layout (and the name/desc text) jumping around. */
-.char-display {
-  position: relative;
-  width: 50%;
-  height: 100%;
+.char-preview {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  text-align: center;
 }
 
-/* A diagonal accent hugging the right edge - similar spirit to the
-   homepage hero wedge, but a plainer two-point diagonal rather than a
-   full parallelogram. */
-.char-display-wedge {
-  position: absolute;
-  inset: 0;
-  background: var(--accent);
-  clip-path: polygon(100% 0, 100% 100%, 55% 100%);
-  transition: background-color 0.4s ease;
-  z-index: 0;
-}
-
-.char-display-img {
-  position: absolute;
-  z-index: 1;
-  max-height: 82vh;
-  max-width: 90%;
-  width: auto;
-  height: auto;
+.char-preview img {
+  width: 100%;
+  max-height: 620px;
+  max-width: 460px;
   object-fit: contain;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  display: block;
 }
 
-.char-display-img.active {
-  opacity: 1;
-}
-
-.char-display-info {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 2.5rem;
-  z-index: 2;
-}
-
-.char-display-info h2 {
-  font-size: 2rem;
-  margin: 0 0 0.4rem;
-}
-
-.char-display-info p {
-  font-size: 0.9rem;
-  color: var(--dim);
-  max-width: 380px;
-  margin: 0;
+.char-preview-name {
+  margin: 1.5rem 0 0;
+  font-size: 2.2rem;
+  line-height: 1;
 }
 
 /* ---- footer ---- */
@@ -441,17 +380,11 @@ a:hover {
   .card-row {
     grid-template-columns: 1fr;
   }
-  .char-page {
-    flex-direction: column;
-    overflow-y: auto;
+  .char-select {
+    grid-template-columns: 1fr;
   }
-  .char-menu {
-    width: 100%;
-    height: auto;
-  }
-  .char-display {
-    width: 100%;
-    height: 50vh;
+  .char-preview {
+    order: -1;
   }
   .hero-title {
     font-size: 2.6rem;

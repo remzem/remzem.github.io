@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} - Wiki</title>
+  <title>Locations - Wiki</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,38 +21,37 @@
     </nav>
   </header>
 
-  {% if hero %}
-    <section class="hero">
-      <div class="hero-wedge"></div>
-      <div class="hero-dots"></div>
-      <div class="hero-inner">
-        <h1 class="hero-title">{{ hero.title }}</h1>
-        <p class="eyebrow">{{ hero.subtitle }}</p>
-      </div>
-    </section>
-    <main class="page">
-      {{ content | safe }}
-    </main>
-  {% elif fullBleed %}
-    <main class="page-fullbleed">
-      {{ content | safe }}
-    </main>
-  {% else %}
-    <main class="page {% if wide %}page-wide{% endif %} {% if infobox %}page-with-infobox{% endif %}">
+  
+    <main class="page  ">
       <div class="page-main">
-        <h1 class="{% if plainTitle %}no-rule{% endif %}">{{ title }}</h1>
-        {{ content | safe }}
-      </div>
-      {% if infobox %}
-        {% include "partials/infobox.njk" %}
-      {% endif %}
-    </main>
-  {% endif %}
+        <h1 class="">Locations</h1>
+        <ul class="card-list">
 
-  {% if not fullBleed %}
+  
+    <li class="card-row">
+      <img class="card-thumb" src="/img/placeholder.png" alt="Location Name">
+      <div>
+        <h3 class="card-title"><a href="/content/locations/location/">Location Name</a></h3>
+        <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </li>
+  
+
+  
+
+  
+
+</ul>
+
+      </div>
+      
+    </main>
+  
+
+  
     <footer class="wiki-footer">
       <p>Placeholder footer text.</p>
     </footer>
-  {% endif %}
+  
 </body>
 </html>

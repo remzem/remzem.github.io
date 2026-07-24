@@ -1,11 +1,71 @@
 ---
 layout: layouts/base.njk
 title: Characters
+fullBleed: true
 ---
-<ul class="wiki-list">
-{% for page in collections.wikiPages %}
-  {% if page.data.category == "character" %}
-    <li><a href="{{ page.url }}">{{ page.data.title }}</a></li>
-  {% endif %}
-{% endfor %}
-</ul>
+<div class="char-page">
+  <div class="char-menu">
+    <h1 class="char-menu-title">Characters</h1>
+    <div class="char-row" id="char-row">
+      {% for page in collections.wikiPages %}
+        {% if page.data.category == "character" %}
+          <a class="char-thumb"
+             href="{{ page.url }}"
+             data-id="{{ loop.index }}"
+             data-name="{{ page.data.title }}"
+             data-summary="{{ page.data.summary }}"
+             data-color="{{ page.data.color }}">
+            <img src="{{ page.data.infobox.thumb }}" alt="{{ page.data.title }}">
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="char-display" id="char-display">
+    <div class="char-display-wedge" id="char-display-wedge"></div>
+
+    {% for page in collections.wikiPages %}
+      {% if page.data.category == "character" %}
+        <img class="char-display-img"
+             data-id="{{ loop.index }}"
+             src="{{ page.data.infobox.image }}"
+             alt="{{ page.data.title }}">
+      {% endif %}
+    {% endfor %}
+
+    <div class="char-display-info">
+      <h2 id="char-display-name">Hover a character</h2>
+      <p id="char-display-desc"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const thumbs = document.querySelectorAll('#char-row .char-thumb');
+  const displayImgs = document.querySelectorAll('.char-display-img');
+  const nameEl = document.getElementById('char-display-name');
+  const descEl = document.getElementById('char-display-desc');
+  const wedgeEl = document.getElementById('char-display-wedge');
+
+  function selectCharacter(thumb) {
+    const id = thumb.dataset.id;
+    displayImgs.forEach(img => img.classList.toggle('active', img.dataset.id === id));
+    nameEl.textContent = thumb.dataset.name;
+    descEl.textContent = thumb.dataset.summary || '';
+    if (thumb.dataset.color) {
+      wedgeEl.style.backgroundColor = thumb.dataset.color;
+    }
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumb.classList.add('active');
+  }
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('mouseenter', () => selectCharacter(thumb));
+  });
+
+  // Show the first character by default instead of a blank pane.
+  if (thumbs[0]) {
+    selectCharacter(thumbs[0]);
+  }
+</script>
