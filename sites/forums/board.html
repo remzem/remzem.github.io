@@ -1,0 +1,56 @@
+<!-- =========================================================
+     MetroBoard — forum thread (phpBB/vBulletin style).
+     Duplicate this file for other threads/boards.
+     ========================================================= -->
+<style>
+  .site-forum{ font-family:Verdana, Arial, sans-serif; font-size:12px; color:#222; background:#f2ede0; }
+  .forum-header{ background:var(--navy); color:#fff; padding:12px 16px; font-size:17px; font-weight:bold; }
+  .forum-crumb{ background:#e3d9bd; padding:7px 16px; font-size:11px; }
+  .forum-crumb a{ color:var(--navy); cursor:pointer; }
+  .thread-title{ padding:10px 16px; font-size:14px; font-weight:bold; border-bottom:2px solid var(--burnt); }
+  table.post-table{ width:100%; border-collapse:collapse; background:#fff; }
+  table.post-table td{ border:1px solid #dcd0b4; vertical-align:top; padding:12px; }
+  .post-user{ width:150px; background:#fbf5e6; text-align:center; }
+  .post-user .avatar{ width:60px; height:60px; border-radius:6px; background:var(--teal); margin:0 auto 6px; }
+  .post-user .username{ font-weight:bold; color:var(--burnt); cursor:pointer; }
+  .post-user .rank{ font-size:10px; color:#888; }
+  .post-body{ font-size:12px; line-height:1.5; }
+  .post-meta{ font-size:10px; color:#999; margin-bottom:6px; }
+  .signature{ margin-top:10px; border-top:1px dotted #ccc; padding-top:6px; font-size:10px; color:#666; font-style:italic; }
+  .signature a{ color:var(--olive); cursor:pointer; }
+  .forum-footer{ padding:12px 16px; font-size:11px; }
+  .forum-footer a{ color:var(--navy); cursor:pointer; }
+</style>
+
+<div class="site-forum">
+  <div class="forum-header">MetroBoard</div>
+  <div class="forum-crumb"><a onclick="loadSite('gridex')">Gridex</a> &gt; General Discussion &gt; [placeholder thread title]</div>
+  <div class="thread-title">[placeholder thread title &mdash; e.g. "anyone else notice the transit maps changed?"]</div>
+  <table class="post-table">
+    <tr>
+      <td class="post-user">
+        <div class="avatar"></div>
+        <div class="username" onclick="loadSite('vex')">vex_44</div>
+        <div class="rank">Member since [placeholder]</div>
+      </td>
+      <td class="post-body">
+        <div class="post-meta">Posted: [placeholder date/time]</div>
+        <p>[placeholder post content &mdash; first post in thread]</p>
+        <div class="signature">[placeholder signature &mdash; <a onclick="loadSite('vex')">visit my page</a>]</div>
+      </td>
+    </tr>
+    <tr>
+      <td class="post-user">
+        <div class="avatar"></div>
+        <div class="username">[placeholder user]</div>
+        <div class="rank">Member since [placeholder]</div>
+      </td>
+      <td class="post-body">
+        <div class="post-meta">Posted: [placeholder date/time]</div>
+        <p>[placeholder reply content]</p>
+        <div class="signature">[placeholder signature]</div>
+      </td>
+    </tr>
+  </table>
+  <div class="forum-footer"><a onclick="loadSite('gridex')">&larr; Back to Gridex</a></div>
+</div>

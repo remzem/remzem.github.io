@@ -1,0 +1,219 @@
+<!-- =========================================================
+     CHARACTER PROFILE TEMPLATE (MySpace-style)
+
+     HOW TO MAKE A NEW CHARACTER PAGE:
+     1. Duplicate this file inside sites/social/, rename it to
+        the character's name (e.g. sites/social/marco.html).
+     2. Fill in the sections marked "EDIT:" below.
+     3. Open assets/js/browser.js and add one line to the SITES
+        object near the top, e.g.:
+            marco: {
+              title: "Marco Delgado",
+              url:   "http://theloop.rom/marco_delgado",
+              path:  "sites/social/marco.html"
+            },
+     4. Link to the new page from anywhere with:
+            <a onclick="loadSite('marco')">Marco's profile</a>
+
+     WANT THIS CHARACTER'S PAGE TO LOOK DIFFERENT FROM EVERYONE
+     ELSE'S? That's the whole MySpace bit — real users pasted
+     their own CSS into their profile to make it loud, ugly,
+     glittery, whatever fit them. Do the same thing here: add a
+     <style>...</style> block right at the very top of this file
+     (above the char-nav div) and override whatever you want —
+     background, fonts, box colors, borders. It only affects this
+     one page. Example:
+
+       <style>
+         .char-page{ background:#000; font-family:"Comic Sans MS",cursive; }
+         .char-box-head{ background:#ff33cc; }
+         .char-displayname{ color:#ff33cc; }
+       </style>
+
+     Leave the .char-nav / .char-nav-secondary bars alone though —
+     those are the site's own chrome and should stay consistent
+     across every profile, the same way MySpace's top bar never
+     changed no matter whose page you were on.
+     ========================================================= -->
+
+<div class="char-page">
+
+  <div class="char-nav">
+    <div class="char-nav-logo" onclick="loadSite('theloop')" style="cursor:pointer;">THE<span>LOOP</span></div>
+    <div class="char-nav-meta">
+      <a onclick="loadSite('gridex')">Gridex</a>
+      <a>Help</a>
+      <a>Logout</a>
+    </div>
+  </div>
+  <div class="char-nav-secondary">
+    <a onclick="loadSite('theloop')">Browse</a>
+    <a>Search</a>
+    <a>Blog</a>
+    <a>Music</a>
+    <a>Favorites</a>
+    <a>Mail</a>
+    <a>Forum</a>
+    <a>Groups</a>
+  </div>
+
+  <div class="char-body">
+
+    <!-- =================================================
+         SIDEBAR
+         ================================================= -->
+    <div class="char-sidebar">
+
+      <!-- EDIT: NAME + PHOTO + STATUS -->
+      <div class="char-displayname">[Character Name]</div>
+
+      <div class="char-box">
+        <div class="char-box-body">
+          <!-- swap for <img src="..." class="char-photo-placeholder... "> once you have art -->
+          <div class="char-photo-placeholder"></div>
+          <div class="char-mood">Mood: [placeholder — e.g. Content, Restless, Bored]</div>
+          <div class="char-online is-online">&#9679; ONLINE NOW</div>
+          <!-- swap the line above for this one if they're offline: -->
+          <!-- <div class="char-online is-offline">Last Login: [placeholder date]</div> -->
+          <div class="char-url">theloop.rom/[placeholder-username]</div>
+        </div>
+      </div>
+
+      <!-- EDIT: BASIC INFO — delete any row you don't need -->
+      <div class="char-box">
+        <div class="char-box-head">[Character Name]'s Interests</div>
+        <div class="char-box-body">
+          <div class="char-interests-row"><span class="char-interests-label">Gender:</span><span class="char-interests-value">[placeholder]</span></div>
+          <div class="char-interests-row"><span class="char-interests-label">Age:</span><span class="char-interests-value">[placeholder]</span></div>
+          <div class="char-interests-row"><span class="char-interests-label">Occupation:</span><span class="char-interests-value">[placeholder]</span></div>
+          <div class="char-interests-row"><span class="char-interests-label">Location:</span><span class="char-interests-value">[placeholder]</span></div>
+          <div class="char-interests-row"><span class="char-interests-label">Birthplace:</span><span class="char-interests-value">[placeholder]</span></div>
+        </div>
+      </div>
+
+      <!-- EDIT: CONTACT ACTIONS — usually leave the list as-is,
+           these are just flavor / non-functional like everything
+           else on the page -->
+      <div class="char-box">
+        <div class="char-box-head">Contacting [Character Name]</div>
+        <div class="char-box-body char-contact-grid">
+          <div class="char-contact-action">Add to Friends</div>
+          <div class="char-contact-action">Send Message</div>
+          <div class="char-contact-action">Add to Favorites</div>
+          <div class="char-contact-action">Forward to Friend</div>
+          <div class="char-contact-action">Instant Message</div>
+          <div class="char-contact-action">Block User</div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <!-- =================================================
+         MAIN COLUMN
+         ================================================= -->
+    <div class="char-main">
+
+      <!-- ===============================================
+           EDIT: BLURBS
+           This is the main worldbuilding real estate — write
+           these like an actual person would, not a wiki entry.
+           "About me" can run long. Delete "Who I'd like to meet"
+           if it doesn't make sense for this character.
+           =============================================== -->
+      <div class="char-box">
+        <div class="char-box-head">[Character Name]'s Blurbs</div>
+        <div class="char-box-body">
+
+          <div class="char-blurb">
+            <div class="char-blurb-title">About me:</div>
+            <div class="char-blurb-text">
+              [placeholder — a few paragraphs in the character's own
+              voice. What they do, how they talk, small specific
+              details rather than a life summary. This is the best
+              place to plant a detail that seems ordinary now but
+              means more later.]
+            </div>
+          </div>
+
+          <div class="char-blurb">
+            <div class="char-blurb-title">Interests:</div>
+            <div class="char-blurb-text">[placeholder]</div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <!-- ===============================================
+           EDIT: COMMENTS
+           Copy the block between the START/END comments to add
+           a comment. Delete a block to remove one. Newest
+           usually goes on top.
+           =============================================== -->
+      <div class="char-box">
+        <div class="char-box-head">[Character Name]'s Posts</div>
+        <div class="char-box-body">
+
+          <div class="char-comment">
+            <div class="thumb" onclick="loadSite('KEY_GOES_HERE')"></div>
+            <div class="char-comment-body">
+              <div class="char-comment-author" onclick="loadSite('KEY_GOES_HERE')">[Commenter Name]</div>
+              <div class="char-comment-date">[date/time placeholder]</div>
+              <div class="char-comment-text">[comment placeholder]</div>
+            </div>
+          </div>
+
+          <div class="char-comment">
+            <div class="thumb"></div>
+            <div class="char-comment-body">
+              <div class="char-comment-author">[Commenter Name]</div>
+              <div class="char-comment-date">[date/time placeholder]</div>
+              <div class="char-comment-text">[comment placeholder]</div>
+            </div>
+          </div>
+
+          <div class="char-comment">
+            <div class="thumb"></div>
+            <div class="char-comment-body">
+              <div class="char-comment-author">[Commenter Name]</div>
+              <div class="char-comment-date">[date/time placeholder]</div>
+              <div class="char-comment-text">[comment placeholder]</div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- ===============================================
+           EDIT: FRIEND SPACE
+           Copy one .char-friend block per friend. onclick
+           should point at that friend's SITES key.
+           =============================================== -->
+      <div class="char-box">
+        <div class="char-box-head">[Character Name]'s Friend Space<a>view all</a></div>
+        <div class="char-box-body char-friends-grid">
+
+          <!-- COPY FROM HERE to add a friend -->
+          <div class="char-friend" onclick="loadSite('KEY_GOES_HERE')">
+            <div class="thumb"></div>
+            [Name]
+          </div>
+          <!-- COPY TO HERE -->
+
+          <div class="char-friend">
+            <div class="thumb"></div>
+            [Name]
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>

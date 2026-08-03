@@ -1,0 +1,119 @@
+/* =========================================================
+   CHARACTER.CSS
+   Shared structure for every "social" character profile page
+   (sites/social/*.html) — modeled on the old MySpace profile:
+   a consistent site nav at the top (like real MySpace/SpaceHey
+   chrome), then a profile body that's meant to be customized
+   PER CHARACTER, the same way real MySpace users pasted their
+   own CSS into their profile.
+
+   This file sets sane defaults (colors, spacing, layout) so a
+   brand new character page looks fine with zero extra work. But
+   the whole point of MySpace was that everyone's page looked
+   different — so every character's own .html file is expected
+   to add a <style> override block up top for their colors, fonts,
+   background, borders, whatever fits them. See the big comment
+   in _TEMPLATE.html for how.
+
+   Class names all start with "char-" so they never collide with
+   other site types (site-personal, site-corp, etc).
+   ========================================================= */
+
+.char-page{
+  font-family:Verdana, Arial, sans-serif;
+  color:#222;
+  background:#fff;
+  font-size:12px;
+}
+
+/* ---- site nav — the one thing that stays consistent everywhere ---- */
+.char-nav{
+  background:linear-gradient(180deg, var(--navy), var(--deep-teal));
+  color:#fff;
+  padding:12px 24px;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.char-nav-logo{ font-size:24px; font-weight:900; letter-spacing:1px; }
+.char-nav-logo span{ color:var(--mustard); }
+.char-nav-meta{ font-size:11px; }
+.char-nav-meta a{ color:#fff; margin-left:12px; cursor:pointer; }
+
+.char-nav-secondary{
+  background:var(--teal); color:#fff; font-size:12px;
+  padding:8px 24px; display:flex; gap:16px; flex-wrap:wrap;
+}
+.char-nav-secondary a{ color:#fff; text-decoration:none; cursor:pointer; }
+.char-nav-secondary a:hover{ text-decoration:underline; }
+
+/* ---- body: everything below the nav is fair game to restyle per character ---- */
+.char-body{ display:flex; gap:20px; padding:20px 24px; align-items:flex-start; }
+.char-sidebar{ width:230px; flex-shrink:0; }
+.char-main{ flex:1; min-width:0; }
+
+.char-displayname{ font-size:22px; font-weight:bold; color:var(--navy); margin-bottom:10px; }
+
+/* generic boxed section, reused everywhere */
+.char-box{ border:1px solid var(--navy); margin-bottom:16px; }
+.char-box-head{
+  background:var(--mustard); color:#fff; font-weight:bold; font-size:12px;
+  padding:5px 10px;
+}
+.char-box-head a{ color:#fff; font-size:10px; float:right; font-weight:normal; cursor:pointer; }
+.char-box-body{ padding:10px; background:#fff; }
+
+/* ---- sidebar: photo + status ---- */
+.char-photo img, .char-photo-placeholder{
+  width:100%; display:block; border:1px solid #999;
+}
+.char-photo-placeholder{ height:200px; background:var(--olive); }
+.char-mood{ font-size:12px; margin-top:8px; }
+.char-online{ font-size:11px; font-weight:bold; margin-top:4px; }
+.char-online.is-online{ color:var(--olive); }
+.char-online.is-offline{ color:#999; }
+.char-lastlogin{ font-size:10px; color:#888; margin-top:2px; }
+.char-url{ font-size:10px; color:#888; margin-top:8px; word-break:break-all; }
+
+/* ---- sidebar: "Contacting [name]" action grid ---- */
+.char-contact-grid{ display:flex; flex-wrap:wrap; gap:8px 14px; }
+.char-contact-action{
+  width:calc(50% - 7px); font-size:11px; color:var(--teal); cursor:pointer;
+}
+.char-contact-action:hover{ text-decoration:underline; }
+
+/* ---- sidebar: basic info rows ---- */
+.char-info-row{ display:flex; gap:8px; padding:2px 0; font-size:11px; }
+.char-info-label{ width:80px; flex-shrink:0; color:#777; }
+.char-info-value{ color:#222; }
+
+/* ---- sidebar: friend space grid ---- */
+.char-friends-grid{ display:flex; flex-wrap:wrap; gap:8px; }
+.char-friend{ width:64px; text-align:center; font-size:10px; cursor:pointer; }
+.char-friend .thumb{
+  width:60px; height:60px; border-radius:3px; margin:0 auto 3px;
+  background:var(--burnt); border:1px solid var(--navy);
+}
+.char-friend:hover .thumb{ border-color:var(--mustard); }
+
+/* ---- main: blurbs (about me / who i'd like to meet) ---- */
+.char-blurb{ margin-bottom:14px; }
+.char-blurb-title{ font-weight:bold; color:var(--burnt); margin-bottom:4px; }
+.char-blurb-text{ font-size:12px; line-height:1.6; }
+
+/* ---- main: interests ---- */
+.char-interests-row{ display:flex; gap:8px; padding:3px 0; font-size:12px; }
+.char-interests-label{ width:90px; flex-shrink:0; font-weight:bold; color:var(--navy); }
+.char-interests-value{ color:#222; }
+
+/* ---- main: comments ---- */
+.char-comment{
+  display:flex; gap:10px; border-top:1px solid #eee; padding:10px 0;
+}
+.char-comment .thumb{
+  width:50px; height:50px; border-radius:3px; background:var(--teal);
+  border:1px solid var(--navy); flex-shrink:0; cursor:pointer;
+}
+.char-comment-body{ flex:1; }
+.char-comment-author{ font-weight:bold; color:var(--navy); cursor:pointer; }
+.char-comment-author:hover{ text-decoration:underline; }
+.char-comment-date{ font-size:10px; color:#999; margin-bottom:3px; }
+.char-comment-text{ font-size:12px; line-height:1.5; }

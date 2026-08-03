@@ -1,0 +1,74 @@
+<!-- =========================================================
+     MetroFace home / browse page.
+     This is the "click the social network, THEN pick a person"
+     step: it lists every character who has a profile and links
+     to each one. It reuses the same nav chrome as the character
+     profile pages (character.css) so it feels like part of the
+     same site, not a separate thing.
+
+     HOW TO ADD A CHARACTER TO THIS DIRECTORY:
+     Copy one .char-friend block (down in "Browse Profiles") and
+     point its onclick at that character's SITES key from
+     browser.js — same pattern as the "Friend Space" boxes on
+     profile pages.
+     ========================================================= -->
+<style>
+  .mf-browse-grid{ display:flex; flex-wrap:wrap; gap:16px; padding:6px 0; }
+  .mf-profile-card{ width:120px; text-align:center; font-size:12px; cursor:pointer; }
+  .mf-profile-card .thumb{
+    width:110px; height:110px; border-radius:5px; margin:0 auto 6px;
+    background:var(--burnt); border:1px solid var(--navy);
+  }
+  .mf-profile-card:hover .thumb{ border-color:var(--mustard); }
+  .mf-profile-card .mf-name{ font-weight:bold; color:var(--navy); }
+  .mf-profile-card .mf-blurb{ font-size:10px; color:#888; }
+</style>
+
+<div class="char-page">
+
+  <div class="char-nav">
+    <div class="char-nav-logo" onclick="loadSite('metroface')" style="cursor:pointer;">metro<span>face</span></div>
+    <div class="char-nav-meta">
+      <a onclick="loadSite('gridex')">Gridex</a>
+      <a>Help</a>
+      <a>Logout</a>
+    </div>
+  </div>
+  <div class="char-nav-secondary">
+    <a onclick="loadSite('metroface')">Browse</a>
+    <a>Search</a>
+    <a>Blog</a>
+    <a>Music</a>
+    <a>Favorites</a>
+    <a>Mail</a>
+    <a>Forum</a>
+    <a>Groups</a>
+  </div>
+
+  <div class="char-body" style="display:block;">
+
+    <div class="char-displayname">Browse Profiles</div>
+
+    <div class="char-box">
+      <div class="char-box-head">Everyone on MetroFace</div>
+      <div class="char-box-body mf-browse-grid">
+
+        <!-- COPY FROM HERE to add another character to the directory -->
+        <div class="mf-profile-card" onclick="loadSite('socialtemplate')">
+          <div class="thumb"></div>
+          <div class="mf-name">Nova Ferreira</div>
+          <div class="mf-blurb">[placeholder — one line]</div>
+        </div>
+        <!-- COPY TO HERE -->
+
+        <div class="mf-profile-card">
+          <div class="thumb"></div>
+          <div class="mf-name">[placeholder name]</div>
+          <div class="mf-blurb">[placeholder — one line]</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

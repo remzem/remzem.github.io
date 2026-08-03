@@ -1,0 +1,52 @@
+<!-- =========================================================
+     Vex's personal page (GeoCities-style).
+     Every "personal" page can look totally different from this
+     one — just copy this file into sites/personal/ as a starting
+     point and change the styles + content.
+     ========================================================= -->
+<style>
+  .site-personal{
+    padding:20px;
+    background:repeating-linear-gradient(45deg, var(--cream), var(--cream) 10px, #fbe9c6 10px, #fbe9c6 20px);
+    font-family:"Comic Sans MS", cursive, sans-serif; color:var(--navy);
+  }
+  .personal-title{ text-align:center; font-size:30px; color:var(--burnt); text-shadow:2px 2px #fff; margin-bottom:4px; }
+  .personal-blink{ text-align:center; font-size:12px; color:var(--olive); margin-bottom:14px; }
+  .under-construction{ text-align:center; margin:10px 0; font-size:12px; background:var(--mustard); color:#fff; border:2px dashed var(--burnt); padding:6px; border-radius:4px; }
+  .p-box{ background:#fff; border:3px double var(--teal); padding:12px; margin-bottom:14px; font-size:13px; border-radius:4px; }
+  .p-box a{ color:var(--burnt); cursor:pointer; }
+  .p-counter{ text-align:center; font-family:monospace; background:#000; color:var(--mustard); width:120px; margin:10px auto; padding:5px; font-size:14px; border-radius:3px; }
+  .guestbook-entry{ border-top:1px dotted #999; padding:6px 0; font-size:12px; }
+  .webring-footer{ text-align:center; font-size:11px; margin-top:20px; background:var(--olive); color:#fff; padding:10px; border-radius:4px; }
+  .webring-footer a{ color:var(--mustard); font-weight:bold; cursor:pointer; }
+</style>
+
+<div class="site-personal">
+  <div class="personal-title">&#9734;&#24494; Vex's World &#24494;&#9734;</div>
+  <div class="personal-blink">&lt;&lt; welcome to my corner of the metro, sign my guestbook!! &gt;&gt;</div>
+  <div class="under-construction">&#128679; [placeholder: under construction gif] this page is always under construction &#128679;</div>
+  <div class="p-box">
+    <b>about me</b>
+    <p>[placeholder bio &mdash; replace with actual character voice/personality/backstory]</p>
+  </div>
+  <div class="p-box">
+    <b>my links</b>
+    <ul>
+      <li><a onclick="loadSite('board')">my favorite forum thread</a></li>
+      <li><a onclick="loadSite('aegis')">where I work (ugh)</a></li>
+      <li><a>[placeholder link]</a></li>
+    </ul>
+  </div>
+  <div class="p-counter">000441</div>
+  <div class="p-box">
+    <b>guestbook</b>
+    <div class="guestbook-entry">[placeholder name] wrote: "[placeholder guestbook message]"</div>
+    <div class="guestbook-entry">[placeholder name] wrote: "[placeholder guestbook message]"</div>
+  </div>
+  <div class="webring-footer">
+    part of the <b>MetroNet Webring</b> &mdash;
+    <a onclick="loadSite('aegis')">&larr; prev site</a> |
+    <a onclick="loadSite('gridex')">webring home</a> |
+    <a onclick="loadSite('board')">next site &rarr;</a>
+  </div>
+</div>

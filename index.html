@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MetroNet</title>
+<link rel="stylesheet" href="assets/css/desktop.css">
+<link rel="stylesheet" href="assets/css/browser.css">
+<link rel="stylesheet" href="assets/css/character.css">
+<!-- Font Awesome via CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div id="desktop">
+  <div id="desktop-icons">
+    <div class="desktop-icon" id="icon-browser" onclick="openBrowser()">
+      <div class="glyph">&#128421;</div>Gateway
+    </div>
+    <div class="desktop-icon" id="icon-net">
+      <div class="glyph">&#128225;</div>My Metro
+    </div>
+    <div class="desktop-icon" id="icon-bin">
+      <div class="glyph">&#128465;</div>Recycle
+    </div>
+  </div>
+
+  <div id="browser-window">
+    <div id="title-bar">
+      <span id="title-text">Gateway - The Grid</span>
+      <span class="win-controls">
+        <span onclick="closeBrowser()">&#10005;</span>
+      </span>
+    </div>
+    <div id="menu-bar">
+      <span>File</span><span>Edit</span><span>View</span><span>Favorites</span><span>History</span><span>Help</span>
+    </div>
+    <div id="toolbar">
+      <button id="back-btn" onclick="goBack()">&#9664; Back</button>
+      <button id="fwd-btn" onclick="goForward()">Forward &#9654;</button>
+      <div id="address-bar">
+        <span>Address:</span>
+        <input id="address-input" readonly value="http://www.gridex.rom/">
+        <button id="go-btn" onclick="reloadSite()">Go</button>
+      </div>
+    </div>
+    <div id="browser-content"></div>
+    <div id="status-bar">Done</div>
+  </div>
+
+  <div id="taskbar">
+    <div id="start-btn">Start</div>
+    <div id="taskbar-app" onclick="openBrowser()">Gridex</div>
+    <div id="clock">4:12 PM</div>
+  </div>
+</div>
+
+<script src="assets/js/browser.js"></script>
+</body>
+</html>

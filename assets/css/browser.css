@@ -1,0 +1,74 @@
+/* =========================================================
+   BROWSER.CSS
+   The Gateway window frame only: title bar, menu bar,
+   toolbar/address bar, the content viewport, and status bar.
+   This is loaded once on index.html, same as desktop.css.
+
+   The stuff that goes INSIDE #browser-content (the actual
+   websites) is NOT here — each site brings its own <style>.
+   ========================================================= */
+
+#browser-window{
+  position:absolute;
+  width:96vw; height:89vh;
+  max-width:1500px;
+  background:var(--cream);
+  border:3px solid var(--navy);
+  border-radius:8px;
+  box-shadow:6px 6px 0 rgba(0,0,0,0.35);
+  display:flex; flex-direction:column;
+  overflow:hidden;
+}
+
+#title-bar{
+  background:linear-gradient(90deg, var(--burnt), var(--mustard));
+  color:#fff; font-weight:bold; font-size:14px;
+  padding:8px 10px; display:flex; justify-content:space-between; align-items:center;
+  cursor:move;
+}
+#title-bar .win-controls span{
+  display:inline-block; width:20px; height:18px;
+  background:var(--cream); border:1px solid var(--navy); border-radius:3px;
+  margin-left:5px; text-align:center; font-size:11px; line-height:16px;
+  color:var(--navy); cursor:pointer;
+}
+#title-bar .win-controls span:hover{ background:#fff; }
+
+#menu-bar{
+  background:#e9dcc0; font-size:12px; padding:5px 10px;
+  display:flex; gap:18px; border-bottom:1px solid #c9b98f; color:var(--navy);
+}
+#menu-bar span:hover{ text-decoration:underline; cursor:default; }
+
+#toolbar{
+  background:#e9dcc0; padding:7px 10px; display:flex; align-items:center; gap:8px;
+  border-bottom:2px solid var(--navy); font-size:12px;
+}
+#toolbar button{
+  font-family:inherit; font-size:12px; padding:5px 12px;
+  background:var(--teal); color:#fff; border:none; border-radius:4px; cursor:pointer;
+}
+#toolbar button:hover{ background:var(--deep-teal); }
+#toolbar button:disabled{ opacity:0.4; cursor:default; }
+#address-bar{ flex:1; display:flex; align-items:center; gap:8px; }
+#address-bar input{
+  flex:1; font-size:12px; padding:6px 8px; border-radius:4px;
+  border:1px solid var(--navy); background:#fff;
+}
+#go-btn{ background:var(--burnt) !important; }
+
+#browser-content{
+  flex:1; overflow-y:auto; background:#fff;
+  position:relative;
+}
+
+/* shown briefly while a "page" is fetched, per the brief's fake loading messages */
+#loading-msg{
+  padding:40px; text-align:center; color:var(--navy);
+  font-size:13px; font-family:Verdana, Arial, sans-serif;
+}
+
+#status-bar{
+  background:#e9dcc0; border-top:1px solid #c9b98f;
+  font-size:11px; padding:4px 10px; color:var(--navy);
+}
