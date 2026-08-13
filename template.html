@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- DON'T TOUCH THESE META TAGS - THEY HELP WITH DISPLAY ON DIFFERENT DEVICES -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- DON'T EDIT THESE - SHARED SITE STYLES + FONTS + ICONS -->
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="charactersheet.css">
+
+
+  <link rel="stylesheet" href="characters.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="icon" href="https://file.garden/aBb6prPw8QkQxICV/website/placeholder/Logo" />
 
-  <!-- CHANGE THIS TITLE TO MATCH YOUR CHARACTER'S NAME -->
   <title>RETROGRADE — DALLAS</title>
 
   <style>
-    /* ============================================================
-       ARC COLOR — pick ONE named color below and put it on the
-       --charcolor line. Everything on the page (title, meters,
-       tags, portrait block, accents) follows this one variable.
-       ============================================================ */
     :root {
       --grey:   #8a8a86;
       --red:    #c8401f;
@@ -33,18 +26,18 @@
       --teal:   #3aa6a0;
       --purple: #9a6bd1;
 
-      /* CHANGE THIS LINE TO MATCH THE ARC: */
-      --charcolor: var(--red);
+      --charcolor: var(--yellow);
+      --accent2: var(--charcolor);
+
     }
   </style>
 </head>
 
 <body class="dossier-page">
 
-  <!-- ============================================================
-       DON'T EDIT — shared ticker + nav, identical markup to home.html
-       ============================================================ -->
-  <div class="frame-ticker">
+    <!--############################################################################-->
+
+    <div class="frame-ticker">
     <div class="ticker-track">
       <div class="ticker-set">
         <span class="tseg diamond">&#9670;</span>
@@ -83,33 +76,17 @@
       <a href="characters.html">CHARACTERS</a>
     </nav>
   </header>
-  <!-- ============================================================ -->
 
+
+  <!--############################################################################-->
   <main class="main-content">
 
-    <!-- --------------------------------
-         BREADCRUMB - CHANGE "NAME NAME" TO YOUR CHARACTER'S NAME
-    ----------------------------------- -->
-    <nav class="dossier-crumb">
-      <a href="index.html">INDEX</a> / <a href="characters.html">CHARACTERS</a> / <span>NAME NAME</span>
-    </nav>
 
-    <!-- --------------------------------
-         FILE TAG - CHANGE THE NUMBER TO KEEP YOUR OWN COUNT
-    ----------------------------------- -->
-
-    <!-- CHARACTER NAME - REPLACE THIS -->
     <h1 class="dossier-title">CHARACTER<br>NAME</h1>
 
-    <div class="dossier-rule"></div>
 
     <div class="dossier-body">
 
-      <!-- --------------------------------
-           PORTRAIT - sticky, stays in view while you scroll the
-           dossier column beside it. Add your image as an <img>
-           inside this div once you have art: <img src="../im/refs/xxxx.png">
-      ----------------------------------- -->
       <div class="dossier-portrait-col">
         <div class="dossier-portrait">
           <img src="https://f2.toyhou.se/file/f2-toyhou-se/images/122053963_DUjmBzc6aWZt6Mn.png" alt="Character portrait">
@@ -117,21 +94,14 @@
         </div>
       </div>
 
-      <!-- --------------------------------
-           SUBJECT INFO - everything else (stats, meters, dossier
-           text) lives in this column so it scrolls past the
-           sticky portrait.
-      ----------------------------------- -->
+      <!--############################################################################-->
       <div class="dossier-info">
 
-        <!-- --------------------------------
-             QUICK STATS - FILL IN THE "answer" PLACEHOLDERS.
-             This strip blends the old JOB/AGE facts with the core
-             INFORMATION fields (pronouns, birthplace, residence,
-             zodiac) so it's all one scan instead of two sections.
-             Add or drop chips as needed - the row wraps on its own.
-        ----------------------------------- -->
         <div class="stat-strip">
+            <div class="stat-chip">
+              <span class="stat-label">PRONOUNS</span>
+              <span class="stat-value">answer</span>
+            </div>
           <div class="stat-chip">
             <span class="stat-label">JOB</span>
             <span class="stat-value">answer</span>
@@ -149,22 +119,14 @@
             <span class="stat-value">answer</span>
           </div>
           <div class="stat-chip">
-            <span class="stat-label">PRONOUNS</span>
-            <span class="stat-value">answer</span>
-          </div>
-          <div class="stat-chip">
-            <span class="stat-label">ZODIAC</span>
+            <span class="stat-label">SIGN</span>
             <span class="stat-value">answer</span>
           </div>
         </div>
 
-        <!-- --------------------------------
-             METERS - 9 STATS IN 3 GROUPS OF 3 (BODY / MIND / HEART).
-             These groupings are just a starting point - move any
-             stat to whichever column actually fits it, rename the
-             column heads, whatever. SET width:__% ON .meter-fill
-             to match the % shown.
-        ----------------------------------- -->
+
+        <!--############################################################################-->
+
         <div class="meter-columns">
 
           <div class="meter-col">
@@ -244,13 +206,7 @@
 
         </div>
 
-        <!-- --------------------------------
-             QUOTE - OPTIONAL. DELETE THE WHOLE BLOCK IF UNUSED
-        ----------------------------------- -->
-        <blockquote class="dossier-quote">
-          "character quote."
-          <cite> CONTEXT OR CITATION HERE</cite>
-        </blockquote>
+        <!--############################################################################-->
 
         <div class="dossier">
       <span class="dossier-tag section-tag"><i class="fa-solid fa-folder-open"></i> DOSSIER</span>
@@ -259,21 +215,15 @@
       <p>To link to another page copy this <a href="LINKHERE.html">NAME HERE</a>.</p>
       <p>Awesome lore goes here <span class="spoiler">hidden text</span> reveal on click.</p>
 
-      <!-- --------------------------------
-           PERSONALITY
-      ----------------------------------- -->
+      <!--############################################################################-->
       <span class="dossier-tag section-tag"><i class="fa-solid fa-brain"></i> PERSONALITY</span>
       <p>Description.</p>
 
-      <!-- --------------------------------
-           ABILITIES
-      ----------------------------------- -->
+      <!--############################################################################-->
       <span class="dossier-tag section-tag"><i class="fa-solid fa-bolt"></i> ABILITIES</span>
       <p>Description.</p>
 
-      <!-- --------------------------------
-           INTERESTS / LIKES & DISLIKES
-      ----------------------------------- -->
+      <!--############################################################################-->
       <span class="dossier-tag section-tag"><i class="fa-solid fa-star"></i> INTERESTS</span>
       <div class="two-column-section">
         <div class="column">
@@ -294,23 +244,20 @@
         </div>
       </div>
 
-      <!-- --------------------------------
-           RELATIONSHIPS - sits in a 2-up grid, duplicate
-           .relationship-card for more people. Swap the icon for
-           an <img src="..."> inside .relationship-avatar once you
-           have a portrait for them.
-      ----------------------------------- -->
+      <!--############################################################################-->
+
+
       <span class="dossier-tag section-tag"><i class="fa-solid fa-users"></i> RELATIONSHIPS</span>
       <div class="relationship-grid">
         <div class="relationship-card">
-          <div class="relationship-avatar"><!-- <img src="..."> --><i class="fa-solid fa-user"></i></div>
+          <div class="relationship-avatar"> <img src="./im/thumbs/temp.png"></div>
           <div class="relationship-text">
             <span class="relationship-name">Name Character</span>
             <span class="relationship-desc">Description of the relationship goes here.</span>
           </div>
         </div>
         <div class="relationship-card">
-          <div class="relationship-avatar"><i class="fa-solid fa-user"></i></div>
+          <div class="relationship-avatar"><img src="./im/thumbs/temp.png"></div>
           <div class="relationship-text">
             <span class="relationship-name">Name Character</span>
             <span class="relationship-desc">Description of the relationship goes here.</span>
@@ -318,33 +265,28 @@
         </div>
       </div>
 
-      <!-- --------------------------------
-           QUOTES - ADDITIONAL QUOTES BEYOND THE HEADLINE ONE ABOVE
-      ----------------------------------- -->
+      <!--############################################################################-->
+
       <span class="dossier-tag section-tag"><i class="fa-solid fa-quote-left"></i> QUOTES</span>
       <div class="quotes-list">
         <blockquote>"Quote goes here."</blockquote>
         <blockquote>"Another quote goes here."</blockquote>
       </div>
 
-      <!-- --------------------------------
-           TRIVIA
-      ----------------------------------- -->
+
+      <!--############################################################################-->
+
       <span class="dossier-tag section-tag"><i class="fa-solid fa-circle-info"></i> TRIVIA</span>
       <ul class="trivia-list">
         <li>Trivia fact goes here.</li>
         <li>Trivia fact goes here.</li>
       </ul>
 
-      <!-- --------------------------------
-           SERVICE LOG - A TIMELINE OF EVENTS. EACH ROW IS ONE EVENT.
-           THE RIGHT-SIDE TAG SHOULD BE ONE OF:
-           is-active / is-promoted (bright) or is-terminated / is-unverified (dim)
-      ----------------------------------- -->
+      <!--############################################################################-->
 
-      </div><!-- /.dossier -->
-      </div><!-- /.dossier-info -->
-    </div><!-- /.dossier-body -->
+      </div>
+      </div>
+    </div>
   </main>
 
   <footer>
